@@ -1,0 +1,15 @@
+{
+  "name": "yt-bot-list",
+  "private": true,
+  "type": "module",
+  "description": "Curated list of YouTube comment bot channels used by the YT Bot Blocker extension.",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "validate": "node scripts/validate.mjs",
+    "build:local": "node scripts/build-index.mjs out --local",
+    "check-terminated": "node scripts/check-terminated.mjs",
+    "test": "node --test \"scripts/test/*.test.mjs\""
+  }
+}

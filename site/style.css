@@ -1,0 +1,57 @@
+:root {
+  --bg: #fafafa;
+  --surface: #ffffff;
+  --text: #1a1a1a;
+  --muted: #5f6368;
+  --border: #e3e3e3;
+  --accent: #c4302b;
+  --active: #1e7e34;
+  --pending: #a15c00;
+  --terminated: #6b6b6b;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #121212;
+    --surface: #1d1d1d;
+    --text: #ececec;
+    --muted: #a0a0a0;
+    --border: #333333;
+    --accent: #ff6b63;
+    --active: #5cc97a;
+    --pending: #f0a541;
+    --terminated: #9a9a9a;
+    color-scheme: dark;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 15px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+header, main { max-width: 860px; margin: 0 auto; padding: 0 16px; }
+header { padding-top: 32px; }
+h1 { margin: 0 0 4px; font-size: 26px; }
+h1::before { content: ""; display: inline-block; width: 10px; height: 10px; margin-right: 10px; border-radius: 50%; background: var(--accent); vertical-align: middle; }
+.sub, .summary { color: var(--muted); margin: 0 0 16px; }
+.controls { display: flex; gap: 8px; flex-wrap: wrap; margin: 16px 0 8px; }
+.controls input, .controls select {
+  font: inherit; color: var(--text); background: var(--surface);
+  border: 1px solid var(--border); border-radius: 8px; padding: 8px 12px;
+}
+.controls input { flex: 1 1 260px; min-width: 0; }
+.list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.item { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px; overflow-wrap: anywhere; }
+.row { display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; }
+.name { font-weight: 600; }
+.handle, .meta { color: var(--muted); font-size: 13px; }
+.badge { margin-left: auto; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .03em; }
+.badge.active { color: var(--active); }
+.badge.pending { color: var(--pending); }
+.badge.terminated { color: var(--terminated); }
+.item a { color: var(--accent); }
+.evidence { margin: 8px 0 0; padding-left: 12px; border-left: 3px solid var(--border); font-size: 14px; white-space: pre-wrap; }
+details summary { cursor: pointer; color: var(--muted); font-size: 13px; margin-top: 6px; }
+.more { display: block; margin: 16px auto 40px; font: inherit; padding: 8px 20px; border-radius: 8px; border: 1px solid var(--border); background: var(--surface); color: var(--text); cursor: pointer; }

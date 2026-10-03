@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>YT Bot List</title>
+  <meta name="description" content="Searchable list of YouTube comment bot channels blocked by YT Bot Blocker.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>YT Bot List</h1>
+    <p class="sub">YouTube comment bot channels hidden by the YT Bot Blocker extension. Read-only view; contributors edit from the extension.</p>
+  </header>
+  <main>
+    <div class="controls">
+      <input id="q" type="search" placeholder="Search name, @handle, channel ID or comment text" autocomplete="off">
+      <select id="status" aria-label="Status filter">
+        <option value="all">All</option>
+        <option value="active" selected>Active</option>
+        <option value="pending">Pending review</option>
+        <option value="terminated">Terminated</option>
+      </select>
+    </div>
+    <p id="summary" class="summary">Loading…</p>
+    <ul id="list" class="list"></ul>
+    <button id="more" class="more" hidden>Show more</button>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
